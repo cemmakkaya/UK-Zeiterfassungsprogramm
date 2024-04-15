@@ -6,7 +6,7 @@ spring:
     hibernate:
       ddl-auto: update
   datasource:
-    url: jdbc:postgresql://localhost:5432/helloworld
+    url: jdbc:postgresql://localhost:5432/zeiterfassung
     username: postgres
     password: 9090
     driverClassName: org.postgresql.Driver
