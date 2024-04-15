@@ -1,4 +1,4 @@
-package com.example5.cemakkaya.mainpage;
+package com.example5.cemakkaya.controller;
 
 import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import org.springframework.http.HttpStatus;
@@ -8,9 +8,9 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @SecurityRequirement(name = "bearerAuth")
-public class MainpageController {
+public class mainpageController {
 
-    public MainpageController() {
+    public mainpageController() {
     }
 
     @RequestMapping("/info")
