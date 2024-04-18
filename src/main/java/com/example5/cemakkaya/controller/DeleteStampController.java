@@ -1,4 +1,4 @@
 package com.example5.cemakkaya.controller;
 
-public class editStampController {
+public class DeleteStampController {
 }
