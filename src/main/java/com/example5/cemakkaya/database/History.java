@@ -34,7 +34,6 @@ public class History {
     private Time afternoon_out;
 
     public History() {
-
     }
 
     public History(String usernam, LocalDate date, Time morning_in, Time morning_out, Time afternoon_in, Time afternoon_out) {
@@ -50,7 +49,7 @@ public class History {
     @JoinColumn(name = "worker_id", nullable = false)
     private Worker user;
 
-    @ManyToMany
+    @ManyToOne
     @JoinColumn(name = "activity_id", nullable = false)
-    private List<Activity> activities;
+    private Activity activity;
 }

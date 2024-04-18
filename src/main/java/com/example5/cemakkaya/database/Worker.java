@@ -25,23 +25,15 @@ public class Worker {
     @Column(nullable = false)
     private Long timeBalance;
 
-    @Column(nullable = false)
-    private String historyId;
-
     public Worker() {
 
     }
 
-    public Worker(String prename, String name, String username, Long timeBalance, String historyId) {
+    public Worker(String prename, String name, String username, Long timeBalance) {
         this.prename = prename;
         this.name = name;
         this.username = username;
         this.timeBalance = timeBalance;
-        this.historyId = historyId;
     }
-
-    @OneToMany
-    @JoinColumn(name = "history_id", nullable = false)
-    private List<History> history;
 
 }

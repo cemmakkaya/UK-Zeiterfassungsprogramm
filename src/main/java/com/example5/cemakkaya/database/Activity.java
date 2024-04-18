@@ -20,12 +20,8 @@ public class Activity {
 
     }
 
-    public Activity(String usernam) {
+    public Activity(String activity) {
         this.activity = activity;
     }
-
-    @ManyToMany
-    @JoinColumn(name = "history_id", nullable = false)
-    private List<History> history;
 
 }
