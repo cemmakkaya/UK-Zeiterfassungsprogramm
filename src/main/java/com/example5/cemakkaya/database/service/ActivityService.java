@@ -1,7 +1,6 @@
 package com.example5.cemakkaya.database.service;
 
 import com.example5.cemakkaya.database.Activity;
-import com.example5.cemakkaya.database.Activity;
 import com.example5.cemakkaya.database.repository.ActivityRepository;
 import org.springframework.stereotype.Service;
 

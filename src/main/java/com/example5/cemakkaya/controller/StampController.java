@@ -2,9 +2,7 @@ package com.example5.cemakkaya.controller;
 
 
 import com.example5.cemakkaya.database.History;
-import com.example5.cemakkaya.database.Worker;
 import com.example5.cemakkaya.database.repository.HistoryRepository;
-import com.example5.cemakkaya.database.service.HistoryService;
 import com.example5.cemakkaya.database.service.HistoryService;
 import com.example5.cemakkaya.security.Roles;
 import io.swagger.v3.oas.annotations.security.SecurityRequirement;
@@ -13,7 +11,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.sql.Time;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 

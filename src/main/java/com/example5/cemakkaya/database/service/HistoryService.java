@@ -1,15 +1,11 @@
 package com.example5.cemakkaya.database.service;
 
 import com.example5.cemakkaya.database.History;
-import com.example5.cemakkaya.database.History;
 import com.example5.cemakkaya.database.repository.HistoryRepository;
 import org.springframework.stereotype.Service;
 
-import java.sql.Time;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
-import java.time.ZoneId;
-import java.time.ZonedDateTime;
 import java.util.List;
 import java.util.NoSuchElementException;
 

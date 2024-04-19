@@ -8,6 +8,6 @@ Rollen:
 - ROLE_worker
 
 2 User
-chef hat ROLE_admin
-worker hat ROLE_worker
+chef hat ROLE_admin Passwort: 1234
+worker hat ROLE_worker Passwort: 1234
 
