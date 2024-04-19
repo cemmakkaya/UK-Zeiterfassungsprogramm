@@ -24,7 +24,4 @@ public class Worker {
     @Column(nullable = false, unique = true)
     private String username;
 
-    @Column(nullable = false)
-    private Long timeBalance;
-
 }

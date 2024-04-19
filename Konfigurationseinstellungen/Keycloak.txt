@@ -1,0 +1,13 @@
+Port: 8080
+
+Realname: IlV
+Client: zeiterfassung
+
+Rollen:
+- ROLE_admin
+- ROLE_worker
+
+2 User
+chef hat ROLE_admin
+worker hat ROLE_worker
+

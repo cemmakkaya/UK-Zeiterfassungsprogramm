@@ -1,0 +1,9 @@
+Datenbank Name: zeiterfassung
+URL: jdbc:postgresql://localhost:5432/zeiterfassung
+User: postgres
+Passwort: 9090
+
+Die Datenbank beinhaltet folgende drei Tabellen:
+- Worker
+- History
+- Activity

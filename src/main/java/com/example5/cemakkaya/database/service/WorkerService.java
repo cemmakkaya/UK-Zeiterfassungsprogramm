@@ -12,22 +12,24 @@ import java.util.Optional;
 public class WorkerService {
 
     private final WorkerRepository userRepository;
+    private final WorkerRepository workerRepository;
 
-    public WorkerService(WorkerRepository userRepository) {
+    public WorkerService(WorkerRepository userRepository, WorkerRepository workerRepository) {
         this.userRepository = userRepository;
+        this.workerRepository = workerRepository;
     }
 
     public List<Worker> findAll() {
         return userRepository.findAll();
     }
 
-    public Optional<Worker> findById(Long id) {
-        return userRepository.findById(id);
+    public Worker saveWorker(Worker worker) {
+        return workerRepository.save(worker);
     }
 
     public Worker editWorker(Worker worker, Long id) {
         if (userRepository.existsById(id)) {
-            Worker workerToEdit = new Worker(id, worker.getName(), worker.getPrename(), worker.getUsername(), worker.getTimeBalance());
+            Worker workerToEdit = new Worker(id, worker.getName(), worker.getPrename(), worker.getUsername());
             return userRepository.save(workerToEdit);
         } else {
             throw new NoSuchElementException("Das Objekt mit der ID: " + id + " wurde nicht gefunden.");

@@ -17,55 +17,55 @@ import java.util.List;
 @SecurityRequirement(name = "bearerAuth")
 public class AdministerWorkerController {
 
-    private final WorkerRepository userRepository;
+    private final WorkerRepository workerRepository;
 
-    private WorkerService userService;
+    private WorkerService workerService;
 
-    public AdministerWorkerController(WorkerService userService, WorkerRepository userRepository) {
-        this.userService = userService;
-        this.userRepository = userRepository;}
+    public AdministerWorkerController(WorkerService workerService, WorkerRepository workerRepository) {
+        this.workerService = workerService;
+        this.workerRepository = workerRepository;}
 
-    @GetMapping("/user")
+    @GetMapping("/worker")
     @RolesAllowed({Roles.admin})
     public List<Worker> getAllWorker () {
-        return userService.findAll();
+        return workerService.findAll();
     }
 
-    @GetMapping("/user/{id}")
+    @GetMapping("/worker/{id}")
     @RolesAllowed({Roles.admin})
     public ResponseEntity<Worker> getWorkerWithId(@PathVariable Long id) {
         try {
-            Worker worker = userRepository.findById(id).orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Worker not found"));
+            Worker worker = workerRepository.findById(id).orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Worker not found"));
             return new ResponseEntity<>(worker, HttpStatus.FOUND);
         } catch (ResponseStatusException e) {
             throw new RuntimeException(e);
         }
     }
 
-    @PostMapping("/user/add")
+    @PostMapping("/worker/add")
     @RolesAllowed({Roles.admin})
     public ResponseEntity<Worker> createWorker(@RequestBody Worker worker) {
         try {
-            worker = userRepository.save(worker);
+            worker = workerRepository.save(worker);
             return new ResponseEntity<>(worker, HttpStatus.CREATED);
         } catch (Exception e) {
             return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
 
-    @PutMapping("/user/update/{id}")
+    @PutMapping("/worker/update/{id}")
     @RolesAllowed({Roles.admin})
     public Worker updateWorker(@PathVariable Long id, @RequestBody Worker updatedWorker) {
-        return userService.editWorker(updatedWorker, id);
+        return workerService.editWorker(updatedWorker, id);
     }
 
-    @DeleteMapping("/user/delete/{id}")
+    @DeleteMapping("/worker/delete/{id}")
     @RolesAllowed({Roles.admin})
     public ResponseEntity<String> deleteWorker(@PathVariable Long id) {
         try {
-            userRepository.findById(id).orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Worker not found"));
-            userService.deleteWorker(id);
-            return new ResponseEntity<>("User " + id + " deleted.", HttpStatus.OK);
+            workerRepository.findById(id).orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Worker not found"));
+            workerService.deleteWorker(id);
+            return new ResponseEntity<>("Worker " + id + " deleted.", HttpStatus.OK);
         } catch (Exception e) {
             return new ResponseEntity<>(null, HttpStatus.NOT_FOUND);
         }
