@@ -1,14 +1,17 @@
 package com.example5.cemakkaya.database;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.sql.Time;
 import java.time.LocalDate;
-import java.util.List;
 
 @Entity
 @Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class History {
 
     @Id
@@ -32,18 +35,6 @@ public class History {
 
     @Column(nullable = true)
     private Time afternoon_out;
-
-    public History() {
-    }
-
-    public History(String usernam, LocalDate date, Time morning_in, Time morning_out, Time afternoon_in, Time afternoon_out) {
-        this.username = usernam;
-        this.date = date;
-        this.morning_in = morning_in;
-        this.morning_out = morning_out;
-        this.afternoon_in = afternoon_in;
-        this.afternoon_out = afternoon_out;
-    }
 
     @ManyToOne
     @JoinColumn(name = "worker_id", nullable = false)

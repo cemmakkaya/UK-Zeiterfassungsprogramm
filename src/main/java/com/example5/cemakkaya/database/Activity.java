@@ -1,12 +1,14 @@
 package com.example5.cemakkaya.database;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.Data;
-
-import java.util.List;
+import lombok.NoArgsConstructor;
 
 @Entity
 @Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class Activity {
 
     @Id
@@ -15,13 +17,5 @@ public class Activity {
 
     @Column(nullable = false, unique = true)
     private String activity;
-
-    public Activity() {
-
-    }
-
-    public Activity(String activity) {
-        this.activity = activity;
-    }
 
 }

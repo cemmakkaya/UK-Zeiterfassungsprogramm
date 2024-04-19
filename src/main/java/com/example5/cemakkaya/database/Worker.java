@@ -1,12 +1,14 @@
 package com.example5.cemakkaya.database;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.Data;
-
-import java.util.List;
+import lombok.NoArgsConstructor;
 
 @Entity
 @Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class Worker {
 
     @Id
@@ -24,16 +26,5 @@ public class Worker {
 
     @Column(nullable = false)
     private Long timeBalance;
-
-    public Worker() {
-
-    }
-
-    public Worker(String prename, String name, String username, Long timeBalance) {
-        this.prename = prename;
-        this.name = name;
-        this.username = username;
-        this.timeBalance = timeBalance;
-    }
 
 }
